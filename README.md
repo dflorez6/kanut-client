@@ -1,4 +1,68 @@
-# React + TypeScript + Vite
+# FRONT-END: React + TypeScript + Vite
+
+* To create a new project we are using Vite. From the terminal run the following command:
+
+    > npm create vite@latest "projectName"
+
+## Dependencies
+
+### SASS
+
+* Install the following packages
+
+    > npm install sass --save
+
+### Redux Toolkit + React-Redux
+
+* Install the following packages
+
+    > npm install @reduxjs/toolkit react-redux --save
+
+### React Router
+
+* Install the following packages
+
+    > npm install react-router-dom --save
+
+### React Toastify
+
+* Install the following packages
+
+    > npm install react-toastify --save
+
+### React Paginate
+
+* Install the following packages
+
+    > npm install react-paginate --save
+
+### Moment-Timezone
+
+* Library to handle time zone conversions
+* Install the following packages
+
+    > npm install moment-timezone --save
+
+---
+
+# DEPLOYMENT
+
+1. From the /frontend folder, build static assets. If using Vite: /dist folder. If using create-react-app /build folder.
+
+    > npm run build
+
+2. Make sure that inside .gitignore (root & /frontend) are removed/commented out so that the folder will be included in the commit  
+
+---
+
+## Free Icons (svg, png, jpg)
+
+<https://icons8.com/icons/set/html5>
+<https://www.svgrepo.com/svg/473559/bitbucket?edit=true>
+
+---
+
+## Original README
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
