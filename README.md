@@ -16,13 +16,13 @@
 
 * Install the following packages
 
-    > npm install @reduxjs/toolkit react-redux --save
+    > npm install @reduxjs/toolkit react-redux @types/react-redux --save
 
 ### React Router
 
 * Install the following packages
 
-    > npm install react-router-dom --save
+    > npm install react-router-dom @types/react-router-dom --save
 
 ### React Toastify
 

@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// Dependencies
+import React from "react";
+// State
+import { useSelector } from "react-redux";
+import { RootState } from "./store";
+// Toatsify
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// Components
+import PublicLayout from "./layouts/public/PublicLayout";
+import PrivateLayout from "./layouts/private/PrivateLayout";
 
-function App() {
-  const [count, setCount] = useState(0)
+// Component
+const App: React.FC = () => {
+  //----------
+  // State
+  //----------
+  // Get user information from the Redux store state using typed useSelector hook
+  const { user } = useSelector((state: RootState) => state.auth);
 
+  // Conditional layout rendering
+  let layoutComponent;
+  if (user) {
+    layoutComponent = <PrivateLayout />;
+  } else {
+    layoutComponent = <PublicLayout />;
+  }
+
+  //----------
+  // Output
+  //----------
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ToastContainer />
+      {layoutComponent} {/* Displays UI Layout depending on access level */}
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
