@@ -43,6 +43,12 @@
 
     > npm install moment-timezone --save
 
+### Typescript Linter Plugin
+
+* Install from the terminal
+
+    > npm install --save-dev @typescript-eslint/eslint-plugin
+
 ---
 
 # DEPLOYMENT

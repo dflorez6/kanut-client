@@ -23,7 +23,7 @@ const userAuthSlice = createSlice({
     // Action to set user credentials in the state
     setCredentials: (
       state,
-      action: PayloadAction<{ user: User; token: string }>
+      action: PayloadAction<{ user: User; token: string | null}>
     ) => {
       // Destructure the user and token from the action payload
       const { user, token } = action.payload;

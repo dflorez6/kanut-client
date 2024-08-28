@@ -12,6 +12,11 @@ services:
     volumes:
       - .:/app  # Mount your local code directory
       - /app/node_modules  # Avoid overwriting node_modules
+    networks:
+      - kanut-network
 volumes:
   app-storage: {}
   node_modules: {}
+networks:
+  kanut-network:
+    external: true

@@ -20,13 +20,13 @@ import PrivateRoute from "./components/PrivateRoute.tsx";
 //==========
 // TODO: Add public pages here
 import HomePublic from "./pages/public/home/HomePublic.tsx"; // Root
-// import Login from "./pages/public/auth/Login.jsx";
-// import UserRegistration from "./pages/public/auth/VendorRegistration.jsx";
+import UserLogin from "./pages/public/auth/UserLogin.tsx";
+import UserRegistration from "./pages/public/auth/UserRegistration.tsx";
 //==========
 // Private
 //==========
 // TODO: Add private pages here
-// import Dashboard from "./pages/private/dashboard/Dashboard.jsx";
+import Dashboard from "./pages/private/dashboard/Dashboard.jsx";
 // import Notification from "./pages/private/notifications/Notification.jsx";
 //----------
 // Resources
@@ -39,16 +39,14 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       {/* Public Routes */}
-      {/* TODO: Update for Public Home */}
       <Route index element={<HomePublic />} />
-      {/* 
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<UserRegistration />} />
-      */}
+      <Route path="/users/login" element={<UserLogin />} />
+      <Route path="/users/registration" element={<UserRegistration />} />
+
       {/* Private Routes */}
       <Route element={<PrivateRoute />}>
+        <Route path="/dashboard" element={<Dashboard />} />
         {/* 
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/notifications" element={<Notification />} />
         */}
 
